@@ -1,0 +1,23 @@
+# dsh-plugin-axolotl bundle patch
+#
+# 一行宿主插件。配置项全部可选，默认值见 src/config.js。
+- insert:
+    - id: axolotl
+      name: 'dsh-plugin-axolotl'
+      config:
+        # 启动器内置 MCP 的地址。换端口时改这里，或在设置页里改。
+        upstreamUrl: 'http://127.0.0.1:5219/mcp'
+        # DSH 启动时尝试连接；连不上不影响插件加载，工具会说明原因。
+        autoConnect: true
+        # auto = 按需开关控制会话；persistent = 一直持有；manual = 只读操作也报错
+        sessionPolicy: auto
+        # 控制会话闲置多久自动关掉（毫秒）
+        sessionIdleMs: 900000
+        # 撞上「另一个控制会话占用」时最多重试多久（毫秒）。启动器要等心跳超时才释放，约 30s。
+        sessionRetryMs: 45000
+        # 是否注册 axolotl_raw 逃生口工具
+        exposeRawTool: true
+        # 需要完全访问权限的写操作是否走 DSH 审批
+        requireApproval: true
+        # 单次上游调用超时（毫秒）
+        toolCallTimeoutMs: 120000

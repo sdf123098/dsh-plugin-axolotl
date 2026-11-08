@@ -1,0 +1,61 @@
+{
+  "name": "dsh-plugin-axolotl",
+  "version": "0.2.1",
+  "description": "DSH plugin for the Axolotl Launcher (美西螈启动器): 269 upstream MCP tools folded into 11 domain tools, control-session lifetime handled for you, screenshots returned as real images",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "axolotl",
+    "minecraft",
+    "launcher",
+    "mcp",
+    "美西螈",
+    "启动器"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-tools": "^0.2.1-rc.1"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "test:live": "node --test test/live.test.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdf123098/dsh-plugin-axolotl.git"
+  },
+  "homepage": "https://github.com/sdf123098/dsh-plugin-axolotl#readme",
+  "bugs": {
+    "url": "https://github.com/sdf123098/dsh-plugin-axolotl/issues"
+  }
+}
